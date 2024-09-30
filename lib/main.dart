@@ -11,83 +11,130 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.teal,
+        backgroundColor: Colors.black,
         body: SafeArea(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+          child: Stack(
             children: [
-              const CircleAvatar(
-              backgroundImage: AssetImage('lib/images/img.png'),
-              radius: 60.0,
-            ),
-              Text(
-                'Zyrus Crispino',
-                style: TextStyle(
-                  fontFamily: 'ChakraPetch',
-                  fontSize: 35.0,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
+              Container(
+                decoration: const BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage('lib/images/back.png'),
+                      fit: BoxFit.cover,
+                    )
                 ),
-              ),
-              Text(
-                  'App Developer',
-                style: TextStyle(
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.w200,
-                    color: Colors.white,
-                ),
-              ),
-              SizedBox(
-                width: 150.0,
-                child: Divider(
-                  thickness: 1.0,
-                  color: Colors.white
-                ),
+
               ),
               Container(
-                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-                padding: EdgeInsets.all(20.0),
-                color: Colors.white,
-                child: Row(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                        colors: [
+                          Colors.black.withOpacity(0.8),
+                          Colors.black.withOpacity(0.3),
+                        ],
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                  ),
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(
-                      Icons.phone,
-                      color: Colors.teal,
-                      size: 20.0,
-                    ),
-                    SizedBox(
-                      width: 40.0,
+                    const CircleAvatar(
+                      backgroundImage: AssetImage('lib/images/img.png'),
+                      radius: 60.0,
                     ),
                     Text(
-                      '+63 929 381 1134'
-                    )
-                  ]
-                ),
-
-              ),
-              Container(
-                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-                padding: EdgeInsets.all(20.0),
-                color: Colors.white,
-                child: Row(
-                    children: [
-                      Icon(
-                        Icons.mail,
-                        color: Colors.teal,
-                        size: 20.0,
+                      'Zyrus Crispino',
+                      style: TextStyle(
+                        fontFamily: 'ChakraPetch',
+                        fontSize: 35.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
                       ),
-                      SizedBox(
-                        width: 40.0,
+                    ),
+                    Text(
+                      'App Developer',
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.w400,
+                        fontStyle: FontStyle.italic,
+                        color: Colors.white,
                       ),
-                      Text(
-                          'crispino.zyrus@gmail.com'
-                      )
-                    ]
+                    ),
+                    SizedBox(
+                      width: 250.0,
+                      child: Divider(
+                          thickness: 2.0,
+                          color: Colors.blue
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+                      padding: EdgeInsets.all(20.0),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10.0),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black12,
+                            blurRadius: 5.0,
+                            offset: Offset(0, 2),
+                          ),
+                        ],
+                      ),
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.phone,
+                            color: Colors.lightBlue,
+                            size: 20.0,
+                          ),
+                          SizedBox(width: 40.0),
+                          Text(
+                            '+63 929 381 1134',
+                            style: TextStyle(
+                              color: Colors.black,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+                      padding: EdgeInsets.all(20.0),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10.0),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black12,
+                            blurRadius: 5.0,
+                            offset: Offset(0, 2),
+                          ),
+                        ],
+                      ),
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.email,
+                            color: Colors.lightBlue,
+                            size: 20.0,
+                          ),
+                          SizedBox(width: 40.0),
+                          Text(
+                            'crispino.zyrus@gmail.com',
+                            style: TextStyle(
+                              color: Colors.black,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
-
               ),
-          ],
-        ),
+            ],
+          )
+
       ),
     ),
     );
